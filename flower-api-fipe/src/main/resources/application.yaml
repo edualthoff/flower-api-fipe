@@ -1,0 +1,60 @@
+
+
+## Api Mercadolivre service
+
+## Server Properties
+
+logging:
+  level:
+    org:
+     springframework:
+      #root: DEBUG
+      security: DEBUG
+      web: DEBUG
+      #boot: DEBUG
+      cloud: DEBUG
+      #integration: DEBUG 
+      mvc:
+       log-request-details: DEBUG
+    '[br.flower]': {debug, error}
+spring:
+ application:
+  name: br-flower-boot-auth
+ jpa.open-in-view: false
+ jpa:
+  # Show or not log for each sql query
+  show-sql: false
+  open-in-view: false
+  properties:
+   # Hibernate Properties
+   hibernate:
+    # enable_lazy_load_no_trans: true
+    # event:
+    #   merge:
+     #   entity_copy_observer: allow
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+    # Hibernate ddl auto (create, create-drop, validate, update)
+    ddl-auto: update
+    #show_sql: true
+    format_sql: false
+# Banco de dados APP
+ datasource:
+  url: jdbc:postgresql://localhost:5435/api_fipeveiculos?currentSchema=public&useSSL=false
+  username: postgres
+  password: admin
+  driverClassName: org.postgresql.Driver
+  initialization-mode: always
+
+ #date:
+  #format:
+  # br-sp: uuuu-MM-dd'T'HH:mm:ss+0300 
+   
+
+ jackson:
+  date-format: ddMMyyyy
+  
+api:
+  sendreport:
+    uri: www.repor.com.br
+  version: 2.0
+  
